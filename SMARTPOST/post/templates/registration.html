@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Register | AI Social Management &amp; Safety</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101d22",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center p-6 antialiased">
+    <!-- Decorative background elements -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+    </div>
+    <!-- Main Registration Container -->
+    <main class="w-full max-w-[520px]">
+        <!-- Header Branding -->
+        <div class="flex flex-col items-center mb-8 text-center">
+            <div
+                class="w-12 h-12 bg-primary flex items-center justify-center rounded-xl mb-4 shadow-lg shadow-primary/20">
+                <span class="material-icons text-white text-2xl">auto_fix_high</span>
+            </div>
+            <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-2">Create your account</h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-sm">Join the next generation of AI-driven social media
+                management and safety systems.</p>
+        </div>
+        <!-- Registration Card -->
+        <div
+            class="bg-white dark:bg-slate-900/50 dark:border dark:border-slate-800 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none p-8 md:p-10 border border-slate-100">
+            <form action="{% url 'register_page' %}" class="space-y-5" method="POST">
+                {% csrf_token %}
+                <!-- Name Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5"
+                        for="full-name">Full Name</label>
+                    <div class="relative">
+                        <span
+                            class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person_outline</span>
+                        <input
+                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
+                            id="full-name" name="username" placeholder="" required="" type="text" />
+                    </div>
+                </div>
+                <!-- Email Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5"
+                        for="email">Email Address</label>
+                    <div class="relative">
+                        <span
+                            class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">mail_outline</span>
+                        <input
+                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
+                            id="email" name="email" placeholder="" required="" type="email" />
+                    </div>
+                </div>
+                <!-- Phone Number Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5"
+                        for="phone">Phone Number</label>
+                    <div class="relative">
+                        <span
+                            class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">phone_android</span>
+                        <input
+                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
+                            id="phone" name="phone" placeholder="" type="tel" />
+                    </div>
+                </div>
+                <!-- Password Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5"
+                            for="password">Password</label>
+                        <div class="relative">
+                            <span
+                                class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock_outline</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
+                                id="password" name="password" placeholder="" required="" type="password" />
+                        </div>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5"
+                            for="confirm-password">Confirm Password</label>
+                        <div class="relative">
+                            <span
+                                class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock_outline</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
+                                id="confirm-password" name="confirm_password" placeholder="" required=""
+                                type="password" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Password Strength Helper -->
+                <p class="text-[11px] text-slate-500 flex items-center gap-1">
+                    <span class="material-icons text-xs">info</span>
+                    Must contain at least 8 characters, one number, and one symbol.
+                </p>
+                <!-- Terms & Conditions -->
+                <div class="flex items-start gap-3 py-1">
+                    <div class="flex items-center h-5">
+                        <input
+                            class="w-4 h-4 rounded text-primary border-slate-300 dark:border-slate-700 focus:ring-primary transition-all"
+                            id="terms" name="terms" required="" type="checkbox" />
+                    </div>
+                    <label class="text-sm text-slate-600 dark:text-slate-400" for="terms">
+                        I agree to the <a class="text-primary hover:underline font-medium" href="#">Terms of Service</a>
+                        and <a class="text-primary hover:underline font-medium" href="#">Privacy Policy</a>.
+                    </label>
+                </div>
+                <!-- Action Button -->
+                <button
+                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group"
+                    type="submit">
+                    Create Account
+                    <span
+                        class="material-icons text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Social Registration Divider -->
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-slate-100 dark:border-slate-800"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-3 bg-white dark:bg-slate-900/10 text-slate-400">Or register with</span>
+                </div>
+            </div>
+            <!-- Social Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button
+                    class="flex items-center justify-center gap-2 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 text-sm font-medium">
+                    <svg class="w-5 h-5" viewbox="0 0 24 24">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4"></path>
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853"></path>
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                            fill="#FBBC05"></path>
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z"
+                            fill="#EA4335"></path>
+                    </svg>
+                    Google
+                </button>
+                <button
+                    class="flex items-center justify-center gap-2 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 text-sm font-medium">
+                    <svg class="w-5 h-5 fill-slate-800 dark:fill-white" viewbox="0 0 24 24">
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                        </path>
+                    </svg>
+                    GitHub
+                </button>
+            </div>
+        </div>
+        <!-- Footer Link -->
+        <p class="mt-8 text-center text-slate-600 dark:text-slate-400 text-sm">
+            Already have an account?
+            <a class="text-primary font-bold hover:underline transition-all" href="{% url 'login' %}">Log in here</a>
+        </p>
+        <!-- Brand Footer -->
+        <div class="mt-12 flex items-center justify-center gap-6 opacity-40 grayscale hover:grayscale-0 transition-all">
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-xl">verified_user</span>
+                <span class="text-xs font-bold uppercase tracking-widest">Enterprise Ready</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-xl">bolt</span>
+                <span class="text-xs font-bold uppercase tracking-widest">AI Optimized</span>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Background Graphic -->
+    <div class="fixed bottom-0 left-0 w-full p-4 pointer-events-none opacity-20 hidden lg:block">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <div class="p-4 bg-primary/10 rounded-xl border border-primary/20 backdrop-blur-sm">
+                <p class="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Autonomous Monitoring</p>
+            </div>
+            <div class="p-4 bg-primary/10 rounded-xl border border-primary/20 backdrop-blur-sm">
+                <p class="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">256-bit Encryption</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

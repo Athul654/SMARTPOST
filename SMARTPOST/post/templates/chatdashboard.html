@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoPost Configuration Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b2bee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-4 sticky top-0 z-10">
+<div class="flex items-center justify-between max-w-5xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+<div>
+<h1 class="text-xl font-bold leading-tight">AutoPost Setup</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">AI-Driven Content Management</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full p-4 space-y-6 pb-24">
+<section class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-5">
+<h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings</span>
+                Configuration
+            </h2>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300">Describe your posting goal</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary min-h-[100px]" placeholder="e.g. Promote my new summer collection with a focus on vibrant colors and lifestyle photography..."></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300">Duration</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm">
+<option>7 Days</option>
+<option>14 Days</option>
+<option>30 Days</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300">Daily Time</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 text-sm" type="time" value="10:00"/>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+<span class="text-sm font-medium">Platforms</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white">Instagram</button>
+<button class="px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white">Facebook</button>
+</div>
+</div>
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">bolt</span>
+                    Generate AI Plan
+                </button>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">view_day</span>
+                    AI Generated Plan
+                </h2>
+<span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">4 Posts Generated</span>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="font-bold text-sm">Day 1 - Introduction</span>
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified_user</span> SAFE
+                        </span>
+</div>
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/30" data-alt="Modern abstract colorful social media post preview"></div>
+<span class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-slate-400">image</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                                Get ready for the brightest summer yet! ☀️ Our new collection is finally here, featuring vibrant colors and breathable fabrics designed for your best adventures. 
+                            </p>
+<p class="text-[10px] text-primary font-medium mt-2">#SummerVibes #NewCollection #StyleInspiration</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden opacity-80">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="font-bold text-sm">Day 2 - Feature Spotlight</span>
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified_user</span> SAFE
+                        </span>
+</div>
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-primary/20" data-alt="Social media post preview with geometric shapes"></div>
+<span class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-slate-400">image</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                                Quality meets comfort. Our artisans have worked tirelessly to ensure every stitch supports your active lifestyle. Check out the details!
+                            </p>
+<p class="text-[10px] text-primary font-medium mt-2">#QualityDesign #ArtisanMade #ComfortFirst</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-5">
+<h2 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">security</span>
+                Safety &amp; Controls
+            </h2>
+<div class="flex flex-col items-center mb-8">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="54.6" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black">85%</span>
+<span class="text-[10px] uppercase font-bold text-slate-400">Safe Score</span>
+</div>
+</div>
+<p class="text-xs text-center mt-4 text-slate-500 max-w-[200px]">Content adheres to all platform safety guidelines and brand voice.</p>
+</div>
+<div class="space-y-4">
+<button class="w-full border border-primary/20 bg-primary/5 text-primary font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">gpp_maybe</span>
+                    Check Safety
+                </button>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+<div class="flex flex-col">
+<span class="text-sm font-bold">Auto-post when safe</span>
+<span class="text-[10px] text-slate-500">Only post if score &gt; 80%</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<button class="w-full bg-primary text-white font-black py-4 rounded-xl shadow-lg shadow-primary/25 hover:scale-[0.98] transition-transform">
+                    START AUTOPOST
+                </button>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-4 py-2 z-20">
+<div class="max-w-5xl mx-auto flex items-center justify-between text-[11px] font-medium text-slate-500">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-slate-300"></div>
+<span>Status: <span class="text-slate-700 dark:text-slate-300 uppercase">Inactive</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Next Post: <span class="text-slate-700 dark:text-slate-300">--</span></span>
+</div>
+</div>
+</footer>
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-1 bg-white dark:bg-slate-800 shadow-2xl rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 z-30">
+<a class="flex flex-col items-center justify-center p-2 rounded-full min-w-[64px] bg-primary text-white" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Setup</span>
+</a>
+<a class="flex flex-col items-center justify-center p-2 rounded-full min-w-[64px] text-slate-400" href="#">
+<span class="material-symbols-outlined">send</span>
+<span class="text-[10px] font-bold">Posts</span>
+</a>
+<a class="flex flex-col items-center justify-center p-2 rounded-full min-w-[64px] text-slate-400" href="#">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span class="text-[10px] font-bold">Safety</span>
+</a>
+</nav>
+</body></html>
