@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Chat Assistant Desktop Dashboard</title>
+<title>AI Caption Generator - SMARTPOST</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -40,13 +39,11 @@
             background: #e2e8f0;
             border-radius: 10px;
         }
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
 <div class="relative flex h-screen w-full overflow-hidden">
 <!-- Sidebar -->
@@ -55,25 +52,34 @@
 <div class="p-4">
 <button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-white font-semibold transition-all hover:opacity-90 shadow-sm shadow-primary/20">
 <span class="material-symbols-outlined text-[20px]">add</span>
-<span>New Chat</span>
+<span>New Caption</span>
 </button>
 </div>
 <!-- Chat History List -->
 <div class="flex-1 overflow-y-auto custom-scrollbar px-3 space-y-1">
-<p class="px-3 pt-4 pb-2 text-xs font-bold uppercase tracking-wider text-slate-400">Recent Chats</p>
+<p class="px-3 pt-4 pb-2 text-xs font-bold uppercase tracking-wider text-slate-400">Recent Captions</p>
 <div class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-3 text-primary cursor-pointer group">
 <span class="material-symbols-outlined text-[20px] fill-current">chat_bubble</span>
-<p class="text-sm font-semibold truncate flex-1">first chat</p>
+<p class="text-sm font-semibold truncate flex-1">Product Launch</p>
 <span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100">more_horiz</span>
+</div>
+<div class="flex items-center gap-3 rounded-lg px-3 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<p class="text-sm font-medium truncate flex-1">Team Photo</p>
+</div>
+<div class="flex items-center gap-3 rounded-lg px-3 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<p class="text-sm font-medium truncate flex-1">Office Event</p>
+</div>
 </div>
 <!-- Sidebar Footer -->
 <div class="p-4 border-t border-slate-100 dark:border-slate-800">
 <div class="flex items-center gap-3 rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors">
 <div class="size-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold overflow-hidden">
-<img alt="" class="size-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcZPq7Ws9PRCHR_RLS_EUE7AbkkKRpdKtp9Mela_pEcHLKECpZaUILe3asNoR_54fiGvpw4vBf72U1nXzg7vqVU31eyQ0CNhWsk3l7lBR_6Pjv2iTvwJCQCRxtGKlk21Frq7j9r-9ogLLNKmcECCnfrQ-WDb7fg5VMS1QGmcrKCGhGykPi0fwXKG035NglP-z3x3sUH9t3aiImfiXAdQ5Rf1bjVk1a5seGOn5rxr2KMVO9Kdrvap6MA6KpwmYcJBrG6yRTz7uosEo"/>
+<span class="material-symbols-outlined">person</span>
 </div>
 <div class="flex-1 overflow-hidden">
-<p class="text-sm font-semibold truncate">Alex Rivera</p>
+<p class="text-sm font-semibold truncate">SMARTPOST User</p>
 <p class="text-xs text-slate-500 truncate">Premium Plan</p>
 </div>
 <span class="material-symbols-outlined text-slate-400">settings</span>
@@ -88,7 +94,7 @@
 <button class="md:hidden text-slate-600 dark:text-slate-400">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<h1 class="text-lg font-bold tracking-tight">SMARTPOST</h1>
+<h1 class="text-lg font-bold tracking-tight">AI Caption Generator</h1>
 </div>
 <div class="flex items-center gap-2">
 <button class="flex size-9 items-center justify-center rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
@@ -100,31 +106,43 @@
 </div>
 </header>
 <!-- Chat Window -->
-<div class="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-8 space-y-8 bg-background-light/30 dark:bg-transparent">
-
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-8 space-y-8 bg-background-light/30 dark:bg-transparent" id="chatWindow">
+<!-- AI Message -->
+<div class="flex items-start gap-4 max-w-4xl mx-auto">
+<div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-sm">
+<span class="material-symbols-outlined text-[20px] fill-current">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="rounded-2xl rounded-tl-none bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<p class="text-sm leading-relaxed">Welcome to AI Caption Generator! Upload an image and I'll create an engaging Instagram caption with relevant hashtags for you.</p>
+</div>
+<span class="text-[11px] text-slate-400 ml-1 uppercase font-semibold">Assistant • Now</span>
+</div>
+</div>
 </div>
 <!-- Input Area -->
 <footer class="p-4 md:p-8 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
 <div class="max-w-4xl mx-auto">
 <div class="relative flex flex-col gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 p-2 shadow-lg focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
-<textarea class="w-full resize-none border-none bg-transparent p-3 text-sm focus:ring-0 placeholder:text-slate-400 custom-scrollbar" placeholder="Message AI Chat Assistant..." rows="2"></textarea>
+<textarea id="messageInput" class="w-full resize-none border-none bg-transparent p-3 text-sm focus:ring-0 placeholder:text-slate-400 custom-scrollbar" placeholder="Type a message or upload an image..." rows="1"></textarea>
 <div class="flex items-center justify-between px-2 pb-1">
 <div class="flex items-center gap-1">
-<button class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-<span class="material-symbols-outlined text-[20px]">attach_file</span>
-</button>
-<button class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<input type="file" id="imageInput" accept="image/*" class="hidden" />
+<button type="button" onclick="document.getElementById('imageInput').click()" class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Upload Image">
 <span class="material-symbols-outlined text-[20px]">image</span>
 </button>
-<button class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-<span class="material-symbols-outlined text-[20px]">mic</span>
+<button class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Attach File">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
 </button>
-<div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1"></div>
-<button class="flex size-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-<span class="material-symbols-outlined text-[20px]">info</span>
+<div id="imagePreview" class="hidden flex items-center gap-2 px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary">image</span>
+<span class="text-xs text-slate-600 dark:text-slate-400" id="imageName"></span>
+<button type="button" onclick="removeImage()" class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined text-[16px]">close</span>
 </button>
 </div>
-<button class="flex h-9 w-24 items-center justify-center gap-2 rounded-xl bg-primary text-white font-semibold shadow-sm shadow-primary/20 hover:opacity-90 transition-all">
+</div>
+<button id="sendBtn" class="flex h-9 w-24 items-center justify-center gap-2 rounded-xl bg-primary text-white font-semibold shadow-sm shadow-primary/20 hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
 <span class="text-sm">Send</span>
 <span class="material-symbols-outlined text-[18px]">send</span>
 </button>
@@ -137,4 +155,155 @@
 <!-- Overlay for Mobile (Hidden by default) -->
 <div class="fixed inset-0 z-40 hidden bg-slate-900/40 backdrop-blur-sm md:hidden"></div>
 </div>
-</body></html>
+
+<script>
+let selectedImage = null;
+
+document.getElementById("imageInput").addEventListener("change", function(e) {
+    const file = e.target.files[0];
+    const sendBtn = document.getElementById("sendBtn");
+    const imagePreview = document.getElementById("imagePreview");
+    const imageName = document.getElementById("imageName");
+    
+    if (file) {
+        selectedImage = file;
+        imageName.textContent = file.name;
+        imagePreview.classList.remove('hidden');
+        sendBtn.disabled = false;
+    }
+});
+
+function removeImage() {
+    selectedImage = null;
+    document.getElementById("imageInput").value = '';
+    document.getElementById("imagePreview").classList.add('hidden');
+    document.getElementById("imageName").textContent = '';
+    checkSendButton();
+}
+
+document.getElementById("messageInput").addEventListener("input", checkSendButton);
+
+function checkSendButton() {
+    const messageInput = document.getElementById("messageInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const hasText = messageInput.value.trim().length > 0;
+    const hasImage = selectedImage !== null;
+    
+    sendBtn.disabled = !hasText && !hasImage;
+}
+
+async function sendMessage() {
+    const messageInput = document.getElementById("messageInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const chatWindow = document.getElementById("chatWindow");
+    const message = messageInput.value.trim();
+    
+    if (!message && !selectedImage) return;
+    
+    // Disable send button
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Sending...';
+    
+    // Add user message to chat
+    let userMessageHtml = '<div class="flex items-start justify-end gap-4 max-w-4xl mx-auto">';
+    userMessageHtml += '<div class="flex flex-col items-end gap-2">';
+    userMessageHtml += '<div class="rounded-2xl rounded-tr-none bg-primary p-4 shadow-md shadow-primary/10">';
+    
+    if (selectedImage) {
+        const imageUrl = URL.createObjectURL(selectedImage);
+        userMessageHtml += `<img src="${imageUrl}" alt="Uploaded image" class="max-w-sm rounded-lg mb-2">`;
+    }
+    
+    if (message) {
+        userMessageHtml += `<p class="text-sm leading-relaxed text-white">${message}</p>`;
+    }
+    
+    userMessageHtml += '</div>';
+    userMessageHtml += '<span class="text-[11px] text-slate-400 mr-1 uppercase font-semibold">You • Now</span>';
+    userMessageHtml += '</div>';
+    userMessageHtml += '<div class="flex size-9 shrink-0 items-center justify-center rounded-lg overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm">';
+    userMessageHtml += '<span class="material-symbols-outlined text-[20px]">person</span>';
+    userMessageHtml += '</div>';
+    userMessageHtml += '</div>';
+    
+    chatWindow.innerHTML += userMessageHtml;
+    
+    // Clear inputs
+    messageInput.value = '';
+    const currentImage = selectedImage;
+    removeImage();
+    
+    // Scroll to bottom
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    
+    if (currentImage) {
+        // Send to AI for caption generation
+        const formData = new FormData();
+        formData.append("image", currentImage);
+        
+        try {
+            const response = await fetch("/image-caption/", {
+                method: "POST",
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            // Add AI response to chat
+            let aiMessageHtml = '<div class="flex items-start gap-4 max-w-4xl mx-auto">';
+            aiMessageHtml += '<div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-sm">';
+            aiMessageHtml += '<span class="material-symbols-outlined text-[20px] fill-current">smart_toy</span>';
+            aiMessageHtml += '</div>';
+            aiMessageHtml += '<div class="flex flex-col gap-2">';
+            aiMessageHtml += '<div class="rounded-2xl rounded-tl-none bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-800">';
+            
+            if (data.error) {
+                aiMessageHtml += `<div class="text-red-500">${data.error}</div>`;
+            } else {
+                aiMessageHtml += data.result;
+            }
+            
+            aiMessageHtml += '</div>';
+            aiMessageHtml += '<span class="text-[11px] text-slate-400 ml-1 uppercase font-semibold">Assistant • Just now</span>';
+            aiMessageHtml += '</div>';
+            aiMessageHtml += '</div>';
+            
+            chatWindow.innerHTML += aiMessageHtml;
+            
+        } catch (error) {
+            // Add error message to chat
+            let errorMessageHtml = '<div class="flex items-start gap-4 max-w-4xl mx-auto">';
+            errorMessageHtml += '<div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-sm">';
+            errorMessageHtml += '<span class="material-symbols-outlined text-[20px] fill-current">smart_toy</span>';
+            errorMessageHtml += '</div>';
+            errorMessageHtml += '<div class="flex flex-col gap-2">';
+            errorMessageHtml += '<div class="rounded-2xl rounded-tl-none bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-800">';
+            errorMessageHtml += `<div class="text-red-500">Network error: ${error.message}</div>`;
+            errorMessageHtml += '</div>';
+            errorMessageHtml += '<span class="text-[11px] text-slate-400 ml-1 uppercase font-semibold">Assistant • Just now</span>';
+            errorMessageHtml += '</div>';
+            errorMessageHtml += '</div>';
+            
+            chatWindow.innerHTML += errorMessageHtml;
+        }
+    }
+    
+    // Reset button state
+    sendBtn.innerHTML = '<span class="text-sm">Send</span><span class="material-symbols-outlined text-[18px]">send</span>';
+    checkSendButton();
+    
+    // Scroll to bottom
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+document.getElementById("sendBtn").addEventListener("click", sendMessage);
+
+document.getElementById("messageInput").addEventListener("keydown", function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+</script>
+</body>
+</html>
